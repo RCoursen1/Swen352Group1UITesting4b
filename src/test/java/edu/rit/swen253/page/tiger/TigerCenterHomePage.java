@@ -41,6 +41,10 @@ public class TigerCenterHomePage extends AbstractAngularPage {
     findButtonLink(NavButton.CLASS_SEARCH).click();
   }
 
+  public void selectHoursAndLocations() {
+    findButtonLink(NavButton.HOURS_AND_LOCATIONS).click();
+  }
+
   //
   // Private
   //
@@ -68,4 +72,5 @@ public class TigerCenterHomePage extends AbstractAngularPage {
       .findFirst()
       .orElseThrow(() -> new RuntimeException("Could not find button link"));
   }
+
 }
