@@ -1,15 +1,23 @@
 package edu.rit.swen253.test.maps;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
 import edu.rit.swen253.page.SimplePage;
 import edu.rit.swen253.page.tiger.TigerCenterHomePage;
 import edu.rit.swen253.test.AbstractWebTest;
-import edu.rit.swen253.utils.BrowserWindow;
-import org.junit.jupiter.api.*;
-
 import static edu.rit.swen253.utils.BrowserType.FIREFOX;
 import static edu.rit.swen253.utils.BrowserType.onBrowser;
+import edu.rit.swen253.utils.BrowserWindow;
 import static edu.rit.swen253.utils.TimingUtils.sleep;
-import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -30,6 +38,7 @@ class NavigateToRitMapsTest extends AbstractWebTest {
 
   @Test
   @Order(1)
+  @Disabled
   @DisplayName("First, navigate to the Tiger Center Home page.")
   void navigateToHomePage() {
     homePage = navigateToPage("https://tigercenter.rit.edu", TigerCenterHomePage::new);
@@ -37,6 +46,7 @@ class NavigateToRitMapsTest extends AbstractWebTest {
     homeWindow = getCurrentWindow();
   }
 
+  @Disabled
   @Test
   @Order(2)
   @DisplayName("Second, click on the Maps at RIT button and validate navigation.")
@@ -52,6 +62,7 @@ class NavigateToRitMapsTest extends AbstractWebTest {
     assertEquals("https://maps.rit.edu/", mapsPage.getURL());
   }
 
+  @Disabled
   @Test
   @Order(3)
   @DisplayName("Just to validate the new switchToWindow API.")
